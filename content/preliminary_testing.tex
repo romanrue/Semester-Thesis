@@ -1,0 +1,115 @@
+\chapter{Preliminary Testing}
+\label{chap:\currfilebase}
+% The task of the evaluation software is to filter the raw measurement data provided from the measurement software of temperature and linear encoder to the data relevant for evaluation. The main difficulty lies in reading out the data correctly since only the small portion of all data collected during measurement sequences is of relevance.
+
+% \section{Workflow}
+% The properties and the data collected during a measurement test is saved to separate files due to different measurement software and the definition of test parameters altogether. When creating a new evaluation the only input needed apart of these files is the definition how the data is to be evaluated (evaluation configuration). This is to be done in the evaluation software thats' output is an evaluation file and the defined plots, where the evaluation file contains all measurement and evaluation data in a structured way (Figure~{\ref{fig:flowchartneweval}}).
+% \begin{figure}[!ht]
+% \centering
+% \includegraphics[width=0.8\linewidth]{figures/evaluationsoftware/softwareflowchart/flowchartneweval}
+% \caption{In- and outputs of the evaluation software when creating a new evaluation}
+% \label{fig:flowchartneweval}
+% \end{figure}
+
+% If evaluation parameters are to be changed the evaluation file may be used as evaluation software input to overwrite the same file and the associated figure plots (Figure~{\ref{fig:flowchartexisteval}}).
+
+% \begin{figure}[!ht]
+% \centering
+% \includegraphics[width=0.8\linewidth]{figures/evaluationsoftware/softwareflowchart/flowchartexisteval}
+% \caption{In- and outputs of the evaluation software when changing an existing evaluation}
+% \label{fig:flowchartexisteval}
+% \end{figure}
+
+% \section{Structure}
+% The evaluation software is realized as an object oriented tool that can be extended.
+
+% \subsection{Classes}
+% The three main classes are the evaluation, the measurement and the test class. Where measurement test parameters are stored in a test class and the measurement data in a measurement class respectively. The evaluation class shall contain a test class and the measurement classes of the different measurements conducted. The different subclasses  to the individual classes are listed in Table~{\ref{tab:esclasses}}.
+
+% \begin{table}[!ht]
+% \centering
+% \subtable{%
+%   \centering
+%   \begin{tabular}{l}
+%     \textbf{Test class} \\ 
+%     \midrule
+%     ISO230-2 class \\
+%     \negitem ISO230-2 cold \\
+%     \negitem ISO230-2 warm-cold \\
+%     \negitem ISO230-2 multi-range \\
+%     \negitem ISO230-2 stairs \\
+%   \end{tabular}
+% }\hspace{0.08\linewidth}
+% \subtable{%
+%   \centering
+%   \begin{tabular}{l}
+%     \textbf{Measurement class} \\ 
+%     \midrule
+%     Position measurement \\
+%     Temperature measurement \\
+%   \end{tabular}
+% }%
+% \caption{Classes and subclasses}
+% \label{tab:esclasses}
+% \end{table}
+
+% \subsection{Functions}
+% During compilation some task are utilized repetitively in different classes. These tasks are performed by standalone functions as listed.
+
+% \subsubsection*{find\_multistr}
+% The function find\_multistr outputs an array of all strings that contain any of a number of other defined strings. The output may be altered to only show the strings which include all or exactly one of the defined strings. The purpose of this function is to detect text input patterns for a more intuitive parameter definition in other functions.
+
+% \subsubsection*{find\_structfield}
+% The function find\_structfield lists all fieldnames containing a defined value of a given struct in a column array. It is applied in assigning measurement data with its labels.
+
+% \subsubsection*{get\_strnumber}
+% The function get\_strnumber writes the row vector of all numbers that may be found in an input string. It is used in function input commands and reading values of files with defined structures.
+
+% \subsubsection*{load\_colfile}
+% The function load\_colfile converts the data of a file containing numbers of type column separated values, text or excel-sheet into numbers, dates and text arrays. The data listed in the file must be structured in columns which allows the function differentiate between the data types. This function allows to efficiently read any measurement data listed in a column file.
+
+% \subsubsection*{plot\_2D}
+% The function plot\_2D defines standard presentation properties of a 2 dimensional line plot. It is introduced for easier representation of measurement results.
+
+% \subsubsection*{surf\_3D}
+% The function surf\_3D defines standard presentation properties of a 3 dimensional surface plot. It is introduced for easier representation of measurement results.
+
+% \subsubsection*{swap\_col}
+% The function swap\_col swaps two columns of defined indices or columns in a two column matrix. It is used when it comes to redefining the order of columns in a matrix.
+
+
+% \section{Defining the Points for evaluation}
+% One of the main difficulties of the evaluation software is to filter the time-discrete measurement data of the measurement software to  list of data points measured at the target points. Figure~{\ref{fig:findpoint}} points out the amount of data that needs to be neglected for evaluating the position deviation. In this evaluation the mean average of the considered points was used, hence the label average points.
+
+% \begin{figure}[!ht]
+% \centering
+% \includegraphics[width=0.8\linewidth]{figures/evaluationsoftware/findposition/findpoint}
+% \caption[Test example with marked average points]{Test example with marked average points --- Illustrates the approach of the software to define the average point for measurement evaluation.}
+% \label{fig:findpoint}
+% \end{figure}
+
+% The still stand points during measurement are defined by two factors. On one side the feed rate must be approximately zero and on the other side the number of successive points of feed rate zero in the time-discrete space must be in range of the number needed to describe the duration of the measurement time of one target point. This number can be identified as
+% \begin{align}
+% 	n_p	&= f_{m}\cdot t_{m} = 50
+% \end{align}
+% where $t_m$ and $f_m$ are the defined values of the duration of a measurement (Equation~{\ref{eqn:t_m}}) and the frequency in which the measurement is to be stored (Equation~{\ref{eqn:f_m}}) respectively.\par
+
+% Of the still stand point the evaluation software offers to define the point to evaluate by two methods. Either one single point of every sequence of still stand points is implemented directly or the point will be defined as an average of a range of points within the still stand points. Where the points taken into account are again defined by the position of range and the range itself (Figure~{\ref{fig:findpoint_viewB}}).
+
+% \begin{figure}[!ht]
+% \centering
+% \includegraphics[width=0.8\linewidth]{figures/evaluationsoftware/findposition/findpoint_viewB}
+% \caption[Single average point detail view B to Figure~{\ref{fig:findpoint}}]{Single average point detail view B to Figure~{\ref{fig:findpoint}} --- Position of range and Range of all points taken into account to determine the average point can be defined in the software.}
+% \label{fig:findpoint_viewB}
+% \end{figure}
+
+% If one focuses on the deviation of the points taken into account in our test cycle it becomes transparent that it is well below the measuring uncertainty (Figure~{\ref{fig:findpoint_Detail}}).
+
+% \begin{figure}[!ht]
+% \centering
+% \includegraphics[width=0.8\linewidth]{figures/evaluationsoftware/findposition/findpoint_Detail}
+% \caption{Accuracy of still stand points detail view to Figure~{\ref{fig:findpoint_viewB}} --- Visualizes the set process of the Y-axis in still stand. Here the average point is determined as the mean average of all point taken into account.}
+% \label{fig:findpoint_Detail}
+% \end{figure}
+
+%-----------------------------------------------------

@@ -1,0 +1,128 @@
+\documentclass[paper=a4, twoside=true, fontsize=11pt, ]{scrbook}
+
+%%%----------------------------------------------------------------
+%%% ENCODING AND FONTS
+\usepackage[utf8]{inputenc} % input encoding
+\usepackage{times}          % general
+\usepackage{helvet}         % sans serif
+\usepackage[T1]{fontenc}    % font encoding
+
+\usepackage{comment}
+\usepackage{lipsum}
+
+%%%----------------------------------------------------------------
+%%% DOCUMENT INFO
+%% additional variables
+\makeatletter
+\newcommand\reporttype[1]{\def\@reporttype{#1}}
+\newcommand\timespan[1]{\def\@timespan{#1}}
+\newcommand\group[1]{\def\@group{#1}}
+\newcommand\supervisor[1]{\def\@supervisor{#1}}
+\newcommand\chiefsupervisor[1]{\def\@chiefsupervisor{#1}}
+\makeatother
+
+%% entries
+\title{Failure behavior of unidirectional Carbon Fiber-Reinforced Composite (CFRP)}
+\subtitle{Experimental investigation and comparison with an existing failure criterion}
+\reporttype{Semester Thesis}
+\author{Roman Rüttimann}
+\supervisor{Arthur Girard}
+\chiefsupervisor{Prof. Dr. Dirk Mohr}
+\group{Chair of Computational Modeling of Materials in Manufacturing}
+\timespan{Autumn Semester 2019}
+\date{\today}
+
+%%%----------------------------------------------------------------
+%%% PATHS
+\newcommand*{\texpath}{content}
+\newcommand*{\imgpath}{img}
+
+%%%----------------------------------------------------------------
+%%% INITIALIZE
+\input{setup}               % loads all usepackages and changes layout
+\addbibresource{references.bib}
+
+\begin{document}
+
+%%%----------------------------------------------------------------
+%%% TITLE PAGE
+\maketitle
+\cleardoublepage
+
+%%%----------------------------------------------------------------
+%%% PREFACE
+\frontmatter
+\include{\texpath/abstract}
+\cleardoublepage
+%\includepdf{\texpath/plagiat.pdf}
+%\cleardoublepage
+\includepdf{\texpath/task_description.pdf}
+\cleardoublepage
+\tableofcontents
+\cleardoublepage
+\include{\texpath/symbol}
+\cleardoublepage
+
+%%%----------------------------------------------------------------
+%%% MAIN CONTENT
+\mainmatter
+
+\include{\texpath/introduction}
+\include{\texpath/test_setup}
+\include{\texpath/preliminary_testing}
+\include{\texpath/experimental_results}
+\include{\texpath/conclusion_outlook}
+
+%%----------------------------------------------------------------
+%% REFERENCING
+\cleardoublepage
+\phantomsection
+% \renewcommand*{\chapterpagestyle}{empty}
+\addcontentsline{toc}{chapter}{List of figures}
+\listoffigures
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of tables}
+\listoftables
+
+\cleardoublepage
+\phantomsection
+\clearpage
+\renewcommand*{\chapterpagestyle}{empty}
+%\nocite{*}
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography
+
+%%%---------------------------------------------------------------%
+%%% DEBUGGING
+\chapter{DEBUGGING}
+
+This is a minimal document to test KOMA-script with biblatex/biber:
+
+\verb+\cite+: \cite{daniel2007failure}
+
+\verb+\textcite+: \textcite{daniel2018new}
+
+\verb+\parencite+: \parencite{calsson2014experimental}
+
+\verb+\footcite+: \footcite{D6641standard}
+
+\verb+\fullcite+: \fullcite{gurit2017guide}
+
+Creation of the PDF-file:
+\begin{verbatim}
+pdflatex bibtex-minimal-example
+biber bibtex-minimal-example
+pdflatex bibtex-minimal-example
+pdflatex bibtex-minimal-example
+\end{verbatim}
+%-----------------------------------------------------------------%
+
+%%----------------------------------------------------------------
+%% APPENDIX
+\appendix\appendixtrue
+\clearpage
+\include{\texpath/appendix}
+
+\end{document}
