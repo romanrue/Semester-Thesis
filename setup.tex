@@ -172,7 +172,7 @@
 \renewcommand*{\chapterformat}{%
   \hfill\begin{tikzpicture}
     \pgfmathsetmacro{\mylength}{\ifappendix\applengths[\arabic{chapter}-1]\else\chaplengths[\arabic{chapter}-1]\fi}
-    \node(n)[inner sep=0, outer sep=0,
+    \node(n)[inner sep=0, outer sep=1cm,
         font=\fontsize{6cm}{6cm}\selectfont%,text=laccentcolor
       ]{\rule{0pt}{\ht\strutbox}\thechapter};
     \pgfresetboundingbox

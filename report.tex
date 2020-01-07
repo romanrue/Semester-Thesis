@@ -60,7 +60,8 @@
 \cleardoublepage
 \tableofcontents
 \cleardoublepage
-\include{\texpath/symbol}
+%\include{\texpath/symbol}
+\include{\texpath/abbrev}
 \cleardoublepage
 
 %%%----------------------------------------------------------------
@@ -90,7 +91,6 @@
 \phantomsection
 \clearpage
 \renewcommand*{\chapterpagestyle}{empty}
-%\nocite{*}
 \addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography
 
@@ -117,6 +117,10 @@ biber bibtex-minimal-example
 pdflatex bibtex-minimal-example
 pdflatex bibtex-minimal-example
 \end{verbatim}
+
+\lipsum[1]\\
+\lipsum[2]\\
+\lipsum[3]
 %-----------------------------------------------------------------%
 
 %%----------------------------------------------------------------
