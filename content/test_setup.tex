@@ -1,7 +1,7 @@
 \chapter{Test Setup}
 \label{chap:\currfilebase}
 
-In the experiments conducted for this thesis, thin cuboid specimens were put under compressive force in direction of their long side. The force was induced in form of Combined Loading Compression (CLC), i.e. the compressive force was induced by both end- and shear-loading as shown in \autoref{fig:specimen_loads}.
+In the experiments conducted for this thesis, thin rectangular specimens were put under compressive force in direction of their long side. The force was induced in form of Combined Loading Compression (CLC), i.e. the compressive force was induced by both end- and shear-loading as shown in \autoref{fig:specimen_loads}.
 
 \begin{figure}[!ht]
     \centering
@@ -13,13 +13,13 @@ In the experiments conducted for this thesis, thin cuboid specimens were put und
 The test setup used consists of:
 \begin{itemize}
     \item the test specimen
-    \item a fatigue test system generating and measuring load and displacement
-    \item a test fixture, transmitting the load of the test system to the specimen
+    \item a compressive test system generating and measuring displacement and load, where the load is measured using a $\SI{25}{\kilo\newton}$ load cell
+    \item an anti-buckling test fixture, transmitting the load of the test system to the specimen
     \item a CCD camera setup with the camera itself, a lens and light sources mounted on tripods
-    \item a PC with software that allows synced recording of the fatigue test system and the CCD camera
+    \item a PC with software that allows synced recording of the compressive test system and the CCD camera as well as DIC for post evaluation
 \end{itemize}
 
-Where the fatigue test system used was an instron 8801 in displacement-controlled mode and the CLC test fixture in use was an ASTM D6641 as depicted in \autoref{fig:sketch_clc_fixture}. The shear loading on the specimen is applied by increasing the torque of the clamping screws. The setup follows the recommendations of the test fixture standard \cite{D6641standard}.
+Where the compressive test system used was an instron 8801 in displacement-controlled mode and the CLC test fixture in use was an ASTM D6641 similar to the one depicted in \autoref{fig:sketch_clc_fixture} but with four instead of two pillars in order to capture the strain field of the specimen. The clamping force of the fixture, acting on the specimen, is applied by increasing the torque of the clamping screws. The setup follows the recommendations of the test fixture standard \cite{D6641standard}.
 
 \begin{figure}[!ht]
     \centering
@@ -31,8 +31,8 @@ Where the fatigue test system used was an instron 8801 in displacement-controlle
 \section{Specimen}
 \label{sec:specimen}
 
-The material used in the experiments is a unidirectional carbon fibre composite, i.e. a flat plate has been cured from thermoset prepregs\footnote{TC250 Resin System in unidirectional tape format} using vacuum bag and autoclave. The specimens were then shaped by water jet cutting this plate. An example cutting pattern is shown in \autoref{fig:specimen_plateA}, Where a bridge on each specimen circumference, connecting the base plate and the specimen, was not cut through to avoid the loss of specimens.
-The Specimens were cut out in different angles with respect to the fibre direction. These angles are equal to the respective off-axis angles to the compressive loading direction in the setup if one neglects positioning inaccuracies.
+The material used in the experiments is a unidirectional carbon fiber composite, i.e. a flat plate has been cured from thermoset prepregs\footnote{TC250 Resin System in unidirectional tape format} using pre-applied pressure of a vacuum bag and curing-pressure of an autoclave. The specimens were then shaped by water jet cutting this plate. An example cutting pattern is shown in \autoref{fig:specimen_plateA}, Where a bridge on each specimen circumference, connecting the base plate and the specimen, was not cut through to avoid the loss of specimens.
+The Specimens were cut out in different angles with respect to the fiber direction. These angles are equal to the respective off-axis angles to the compressive loading direction in the setup if one neglects positioning inaccuracies.
 
 For later identification, the specimens were labeled according to the test off-axis angle $\theta$, a plate identifier and a unique index.
 
@@ -45,10 +45,11 @@ For later identification, the specimens were labeled according to the test off-a
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.14]{\imgpath/\currfilebase/specimen_plateA}
-    \caption{Water jet cutting pattern for carbon fibre plate with fibre direction indicated in blue and off-axis angle $\theta$}
+    \caption{Water jet cutting pattern for carbon fiber plate with fiber direction indicated in blue and off-axis angle $\theta$}
     \label{fig:specimen_plateA}
 \end{figure}
 
+\newpage
 \subsection{Specimen Preparation}
 \label{subsec:spec_prep}
 
@@ -59,8 +60,8 @@ The specimen preparations include all alterations of the specimen after cutting 
     \begin{enumerate}
         \item Removing the specimens from the cut plate 
         \item Grinding off the remaining material from the connection to the base plate
-        \item Roughening contact surface for fixture and grading
-        \item Grading the field of interest
+        \item Roughening contact surface for fixture and grating
+        \item Grating the field of interest at the mid-surface of the specimen
     \end{enumerate}
 \end{minipage}% <- must be used if no gap
 \hfill% <- use if there is a gap
@@ -70,18 +71,18 @@ The specimen preparations include all alterations of the specimen after cutting 
     \begin{enumerate}
         \item Removing the specimens and tabs from the cut plates respectively
         \item Grinding off the remaining material from the connection to the base plates for both the tabs and the specimen
-        \item Roughening contact surfaces specimen tab connection and for fixture and grading
+        \item Roughening contact surfaces specimen tab connection and for fixture and grating
         \item Use adhesive bonding to connect the tabs to the specimens
-        \item Grading the field of interest
+        \item Grating the field of interest at the mid-surface of the specimen
     \end{enumerate}
 \end{minipage}
 
 \subsection{Specimen Dimensions}
 \label{subsec:spec_dim}
 
-The specimen dimensions follow the test fixture standard \cite{D6641standard}. The length of a specimen defines the gap between lower and upper part of the fixture at zero load. This gap was not varied in the scope of this thesis has been chosen to be equal to the specimen width. The resulting dimensions are shown in \autoref{fig:specimen_nx_dim_labels}.
+The specimen dimensions follow the test fixture standard \cite{D6641standard}. The length of a specimen defines the gap between lower and upper part of the fixture at zero load. This gap was not varied in the scope of this thesis and has been chosen to be equal to the specimen width, i.e. it is small enough so that out-of-plane buckling is negligible. The resulting specimen dimensions are shown in \autoref{fig:specimen_nx_dim_labels}.
 
-To be able to derive the total compression stress from the compressive force one needs to devide it by the cross-section. Hence the cross-section must be known. Therefore the specimens were measured in both their thickness and width at multiple locations as depicted in \autoref{fig:specimen_nx_meas}.
+To be able to derive the compression stress from the compressive force one needs to devide it by the cross-section. Hence the cross-section must be known. Therefore the specimens were measured in both their thickness and width at multiple locations as depicted in \autoref{fig:specimen_nx_meas}.
 
 \begin{figure}[!ht]
     \centering

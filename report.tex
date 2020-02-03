@@ -50,9 +50,9 @@
 
 %%%----------------------------------------------------------------
 %%% DEBUGGING
-\usepackage{showkeys}       % DEBUGGING show labels abover references
-\usepackage{comment}        % DEBUGGING comment out code with comment environment
-\usepackage{lipsum}         % DEBUGGING blind text
+%\usepackage{showkeys}       % DEBUGGING show labels abover references
+%\usepackage{comment}        % DEBUGGING comment out code with comment environment
+%\usepackage{lipsum}         % DEBUGGING blind text
 \newcommand{\todo}[1]{\textcolor{red}{TODO: #1}\PackageWarning{TODO:}{#1!}} % DEBUGGING todo note
 
 \begin{document}
@@ -67,8 +67,8 @@
 \frontmatter
 \include{\texpath/abstract}
 \cleardoublepage
-%\includepdf{\texpath/plagiat.pdf}
-%\cleardoublepage
+\includepdf{\texpath/declaration_originality.pdf}
+\cleardoublepage
 \includepdf{\texpath/task_description.pdf}
 \cleardoublepage
 \tableofcontents
@@ -80,7 +80,7 @@
 %%%----------------------------------------------------------------
 %%% MAIN CONTENT
 \mainmatter
-
+\pagestyle{plain}
 \include{\texpath/introduction}
 \include{\texpath/test_setup}
 \include{\texpath/preliminary_testing}
@@ -103,38 +103,9 @@
 \cleardoublepage
 \phantomsection
 \clearpage
-\renewcommand*{\chapterpagestyle}{empty}
+%\renewcommand*{\chapterpagestyle}{empty}
 \addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography
-
-%%%---------------------------------------------------------------%
-%%% DEBUGGING
-\chapter{DEBUGGING}
-
-This is a minimal document to test KOMA-script with biblatex/biber:
-
-\verb+\cite+: \cite{daniel2007failure}
-
-\verb+\textcite+: \textcite{daniel2018new}
-
-\verb+\parencite+: \parencite{calsson2014experimental}
-
-\verb+\footcite+: \footcite{D6641standard}
-
-\verb+\fullcite+: \fullcite{gurit2017guide}
-
-Creation of the PDF-file:
-\begin{verbatim}
-pdflatex bibtex-minimal-example
-biber bibtex-minimal-example
-pdflatex bibtex-minimal-example
-pdflatex bibtex-minimal-example
-\end{verbatim}
-
-\lipsum[1]\\
-\lipsum[2]\\
-\lipsum[3]
-%-----------------------------------------------------------------%
 
 %%----------------------------------------------------------------
 %% APPENDIX
