@@ -1,17 +1,147 @@
 \chapter{Appendix}
-%\label{chap:\currfilebase}
-%***********************************************************************
+\label{chap:\currfilebase}
 
-% \section{Additional measurement results}
+\section{Overview}
+\label{sec:apx_overview}
 
-% \subsection{Cold test}
+\begin{footnotesize}
+\begin{longtable}{@{}lcccccc}
+\hline
+\thead{Label} & \thead{t [\si{\mm}]}    & \thead{w [\si{\mm}]}    & \thead{is tabbed} & \thead{torque [\si{\newton\meter}]} & \thead{valid CCD} & \thead{valid VIC} \\
+\hline \endhead
+0A1   & 1.330 & 11.950 & \xmark  & hand\footnote{No torque wrench was used}   & \cmark        & \cmark \\
+0A2   & 1.325 & 11.940 & \xmark  & 5      & \cmark        & \cmark \\
+0A3   & 1.335 & 11.935 & \xmark  & 5      & \cmark        & \cmark \\
+0A4   & 1.313 & 11.949 & \xmark  & 5      & \cmark        & \cmark \\
+0A5   & 1.328 & 11.952 & \xmark  & 7.5    & \cmark        & \cmark \\
+0A6   & 1.340 & 11.947 & \xmark  & 5      & \cmark        & \cmark \\
+0A7   & 1.306 & 11.927 & \cmark  & 10     & \cmark        & \cmark \\
+0A8   & 1.303 & 11.931 & \cmark  & \xmark\footnote{Tabbing process failed, no experimental results} & \xmark        & \xmark \\
+0A9   & 1.308 & 11.959 & \cmark  & 5      & \cmark        & \cmark \\
+0A10  & 1.367 & 11.962 & \cmark  & 5      & \cmark        & \cmark \\
+0A11  & 1.317 & 11.951 & \cmark  & 5      & \cmark        & \cmark \\
+0A12  & 1.317 & 11.964 & \cmark  & 5      & \cmark        & \cmark \\
+0A13  & 1.335 & 11.975 & \cmark  & 5      & \cmark        & \cmark \\
+3A1   & 1.321 & 11.979 & \cmark  & 5      & \cmark        & \cmark \\
+3A2   & 1.321 & 11.961 & \cmark  & 5      & \cmark        & \cmark \\
+3A3   & 1.327 & 11.928 & \cmark  & 5      & \cmark        & \cmark \\
+3A4   & 1.319 & 11.954 & \cmark  & 5      & \cmark        & \cmark \\
+5A1   & 1.304 & 11.966 & \cmark  & 5      & \cmark        & \cmark \\
+5A2   & 1.326 & 11.956 & \cmark  & 5      & \cmark        & \cmark \\
+5A3   & 1.324 & 11.946 & \cmark  & 5      & \cmark        & \cmark \\
+5A4   & 1.334 & 11.935 & \cmark  & 5      & \cmark        & \cmark \\
+7A1   & 1.305 & 11.961 & \cmark  & 5      & \cmark        & \cmark \\
+7A2   & 1.341 & 11.963 & \cmark  & 5      & \cmark        & \cmark \\
+7A3   & 1.341 & 11.950 & \cmark  & 5      & \cmark        & \cmark \\
+7A4   & 1.338 & 11.943 & \cmark  & 5      & \cmark        & \cmark \\
+10A1  & 1.313 & 11.951 & \cmark  & 5      & \cmark        & \cmark \\
+10A2  & 1.323 & 11.943 & \cmark  & 5      & \cmark        & \cmark \\
+10A3  & 1.338 & 11.954 & \cmark  & 5      & \cmark        & \cmark \\
+12A1  & 1.291 & 11.922 & \cmark  & 5      & \cmark        & \cmark \\
+12A2  & 1.323 & 11.917 & \cmark  & 5      & \cmark        & \cmark \\
+12A3  & 1.318 & 11.921 & \cmark  & 5      & \cmark        & \cmark \\
+12A4  & 1.333 & 11.916 & \cmark  & 5      & \cmark        & \cmark \\
+15A1  & 1.330 & 11.921 & \xmark  & 5      & \cmark        & \cmark \\
+15A2  & 1.343 & 11.921 & \cmark  & 5      & \cmark        & \cmark \\
+20A1  & 1.315 & 11.978 & \xmark  & 5      & \cmark        & \cmark \\
+20A2  & 1.333 & 11.949 & \xmark  & 5      & \cmark        & \cmark \\
+20A3  & 1.335 & 11.954 & \xmark  & 5      & \cmark        & \cmark \\
+25A1  & 1.326 & 11.979 & \xmark  & 5      & \cmark        & \cmark \\
+25A2  & 1.342 & 11.916 & \xmark  & 5      & \cmark        & \cmark \\
+25A3  & 1.348 & 11.953 & \xmark  & 5      & \cmark        & \cmark \\
+25A4  & 1.354 & 11.945 & \xmark  & 5      & \cmark        & \cmark \\
+30A1  & 1.315 & 11.975 & \xmark  & 5      & \cmark        & \cmark \\
+30A2  & 1.335 & 11.983 & \xmark  & 5      & \cmark        & \cmark \\
+30A3  & 1.338 & 11.944 & \xmark  & 5      & \cmark        & \cmark \\
+30A4  & 1.326 & 11.966 & \xmark  & 5      & \cmark        & \cmark \\
+35A1  & 1.326 & 11.952 & \xmark  & 5      & \cmark        & \cmark \\
+35A2  & 1.356 & 11.963 & \xmark  & 5      & \cmark        & \cmark \\
+35A3  & 1.347 & 11.943 & \xmark  & 5      & \cmark        & \cmark \\
+35A4  & 1.346 & 11.954 & \xmark  & 5      & \cmark        & \cmark \\
+40A1  & 1.354 & 11.913 & \xmark  & 5      & \cmark        & \cmark \\
+40A2  & 1.341 & 11.984 & \xmark  & 5      & \xmark\footnote{Overexposure}        & \xmark \\
+40A3  & 1.342 & 11.918 & \xmark  & 5      & \cmark        & \cmark \\
+40A4  & 1.342 & 11.930 & \xmark  & 5      & \cmark        & \cmark \\
+45A1  & 1.337 & 11.877 & \xmark  & 5      & \cmark        & \cmark \\
+45A2  & 1.338 & 11.908 & \xmark  & 5      & \cmark        & \cmark \\
+45A3  & 1.328 & 11.915 & \xmark  & 5      & \cmark        & \cmark \\
+45A4  & 1.329 & 11.936 & \xmark  & 5      & \cmark        & \cmark \\
+45A5  & 1.312 & 11.909 & \xmark  & 5      & \cmark        & \cmark \\
+50A1  & 1.330 & 11.969 & \xmark  & 5      & \cmark        & \cmark \\
+50A2  & 1.343 & 11.937 & \xmark  & 5      & \cmark        & \cmark \\
+50A3  & 1.317 & 11.955 & \xmark  & 5      & \xmark\footnote{Overexposure}        & \xmark \\
+50A4  & 1.328 & 11.925 & \xmark  & 5      & \cmark        & \cmark \\
+50A5  & 1.340 & 11.923 & \xmark  & 5      & \cmark        & \cmark \\
+60A1  & 1.333 & 11.923 & \xmark  & 5      & \cmark        & \cmark \\
+60A2  & 1.334 & 11.894 & \xmark  & 5      & \cmark        & \cmark \\
+80A1  & 1.314 & 11.909 & \xmark  & hand\footnote{\label{ftnote:hand}No torque wrench was used}   & \cmark        & \cmark \\
+80A2  & 1.297 & 11.958 & \xmark  & 5      & \cmark        & \cmark \\
+80A3  & 1.314 & 11.945 & \xmark  & 5      & \cmark        & \cmark \\
+80A4  & 1.326 & 11.904 & \xmark  & 5      & \cmark        & \cmark \\
+90A1  & 1.317 & 11.936 & \xmark  & hand\footref{ftnote:hand}   & \cmark        & \cmark \\
+90A2  & 1.325 & 11.984 & \xmark  & 5      & \cmark        & \cmark \\
+90A3  & 1.328 & 11.943 & \xmark  & 5      & \cmark        & \cmark \\
+90A4  & 1.331 & 11.960 & \xmark  & 5      & \cmark        & \cmark \\
+90A5  & 1.304 & 11.935 & \xmark  & 5      & \cmark        & \cmark \\
+\hline
+\caption[Overview of all experiments conducted]{Overview of all experiments conducted -- t and w represent the means of the thickness and width measurements respectively. Furthermore the torque applied to the fixture screws and the validity of both the CCD camera recordings and the DIC are listed}
+\label{tab:specimen_overview}
+\end{longtable}
+\end{footnotesize}
 
-% \begin{figure}[H]
-% \centering
-% \includegraphics[width=0.85\linewidth]{figures/measurementresults/cold/coldtest_17112017_devtemp}
-% \caption[Positioning error motions motions and relevant temperatures cold 17.11.2017]{Positioning error motions and relevant temperature profiles over time of the cold test started on November 17th 2017. Setting parameter $n_t=140$}
-% \label{fig:coldtest_17112017_devtemp}
-% \end{figure}
+\section{Stress over Strain Curves}
+\label{sec:apx_stress_strain}
+
+\newcommand{\stressStrainFigs}[2]{%
+    \begin{figure}[H]
+        \begin{floatrow}
+            \ffigbox[\FBwidth]
+            {\includegraphics[scale=0.3]{\imgpath/\currfilebase/#1_Stress_over_Strain}}
+            {\caption{Stress over strain curve of experiment #1}
+            \label{fig:#1_Stress_over_Strain}}
+            
+            \ffigbox[\FBwidth]
+            {\includegraphics[scale=0.3]{\imgpath/\currfilebase/#2_Stress_over_Strain}}
+            {\caption{Stress over strain curve of experiment #2}
+            \label{fig:#2_Stress_over_Strain}}
+        \end{floatrow}
+    \end{figure}%
+}
+
+\stressStrainFigs{0A1}{0A2}
+\stressStrainFigs{0A3}{0A4}
+\stressStrainFigs{0A5}{0A6}
+\stressStrainFigs{0A7}{0A9}
+\stressStrainFigs{0A10}{0A11}
+\stressStrainFigs{0A12}{0A13}
+\stressStrainFigs{3A1}{3A2}
+\stressStrainFigs{3A3}{3A4}
+\stressStrainFigs{5A1}{5A2}
+\stressStrainFigs{5A3}{5A4}
+\stressStrainFigs{7A1}{7A2}
+\stressStrainFigs{7A3}{7A4}
+\stressStrainFigs{10A1}{10A2}
+\stressStrainFigs{10A3}{12A1}
+\stressStrainFigs{12A2}{12A3}
+\stressStrainFigs{12A4}{15A1}
+\stressStrainFigs{15A2}{20A1}
+\stressStrainFigs{20A2}{20A3}
+\stressStrainFigs{30A1}{30A2}
+\stressStrainFigs{30A3}{30A4}
+\stressStrainFigs{35A1}{35A2}
+\stressStrainFigs{35A3}{35A4}
+\stressStrainFigs{40A1}{40A3}
+\stressStrainFigs{40A4}{45A1}
+\stressStrainFigs{45A2}{45A3}
+\stressStrainFigs{45A4}{50A1}
+\stressStrainFigs{50A2}{50A4}
+\stressStrainFigs{60A1}{60A2}
+\stressStrainFigs{80A1}{80A2}
+\stressStrainFigs{80A3}{80A4}
+\stressStrainFigs{90A2}{90A3}
+\stressStrainFigs{90A4}{90A5}
+
+
 
 % \begin{figure}[H]
 % \centering

@@ -1,4 +1,8 @@
 %%%----------------------------------------------------------------
+%%% PDF OUTPUT DETECTION
+\usepackage{ifpdf}
+
+%%%----------------------------------------------------------------
 %%% COLORS
 \usepackage{xcolor}       % color commands
 
@@ -17,20 +21,23 @@
 
 %%%----------------------------------------------------------------
 %%% FIGURES
-\usepackage{float}        % floating figures (do not use in KOMA script)
-\usepackage{scrhack}      % fixes floating environments in KOMA script 
-\usepackage[pdftex]{graphicx}   % improved includegraphics
+%\usepackage{float}        % floating figures (do not use in KOMA script)
+%\usepackage{scrhack}      % fixes floating environments in KOMA script 
+\usepackage{floatrow}     % multiple float elements in one roe
+\ifpdf
+    \PassOptionsToPackage{pdftex}{graphicx}
+\fi
+\usepackage{graphicx}     % improved includegraphics
 \usepackage{rotating}     % rotate graphics (load after graphicx)
+
 
 %%%----------------------------------------------------------------
 %%% TABLES
 \usepackage{booktabs}     % better spacing
 \usepackage{longtable}    % multi page tables
 \usepackage{colortbl}     % allows to color cell backgrounds
-
-%%%----------------------------------------------------------------
-%%% LABELS
-\usepackage{showkeys}     % DEBUGGING show labels abover references
+\usepackage{makecell}     % for easy table headers
+    \renewcommand\theadfont{\bfseries\sffamily}
 
 % %%%----------------------------------------------------------------
 % %%% CAPTIONS
@@ -39,6 +46,7 @@
   hang,                   % hanging
   labelfont=bf            % bold label
   ]{caption}              % captions for tables and figures
+\usepackage{subcaption}   % allows to do subcaptions in figures
 %\usepackage{captcont}     % subfigures over multiple pages
 
 %%%----------------------------------------------------------------
@@ -72,26 +80,31 @@
 
 %%%----------------------------------------------------------------
 %%% REFERENCING
-\makeatletter
-\usepackage[
-  pdftex,                       % pdftex backend
-  bookmarks,                    % make bookmarks
-  bookmarksopen=true,           % open bookmarks tree
-  bookmarksnumbered=true,       % put section numbers in bookmarks
-  pdfauthor={\@author},         % text for pdf author name
-  pdftitle=\@title: \@subtitle, % text for pdf title name
-  colorlinks=false,             % box hyperlinks
-  linkcolor=black,              % textcolor of links
-  citecolor=black,              % textcolor of citation links
-  filecolor=black,              % textcolor of file links
-  urlcolor=black,               % textcolor of url links
-  anchorcolor=black,            % anchor color
-  menucolor=black,              % color of menu links
-  breaklinks=true,              % allow links to break over multiple lines
-  pageanchor=true,              % for jumping to a page
-  plainpages=false,             % page number anchors as plain arabic
-  pdfpagelabels=true]{hyperref}
-\makeatother
+\ifpdf              % if output is pdf
+    \makeatletter
+    \usepackage[%   % parse hyperref options
+        pdftex,                       % pdftex backend
+        bookmarks,                    % make bookmarks
+        bookmarksopen=true,           % open bookmarks tree
+        bookmarksnumbered=true,       % put section numbers in bookmarks
+        pdfauthor={\@author},         % text for pdf author name
+        pdftitle=\@title: \@subtitle, % text for pdf title name
+        colorlinks=false,             % box hyperlinks
+        linkcolor=black,              % textcolor of links
+        citecolor=black,              % textcolor of citation links
+        filecolor=black,              % textcolor of file links
+        urlcolor=black,               % textcolor of url links
+        anchorcolor=black,            % anchor color
+        menucolor=black,              % color of menu links
+        breaklinks=true,              % allow links to break over multiple lines
+        pageanchor=true,              % for jumping to a page
+        plainpages=false,             % page number anchors as plain arabic
+        pdfpagelabels=true            % pdf page labels correspond to file
+    ]{hyperref}
+    \makeatother
+\else
+    \usepackage{hyperref}
+\fi
 
 %%----------------------------------------------------------------
 %% TOOLKITS

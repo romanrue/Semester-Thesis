@@ -7,8 +7,10 @@
 \usepackage{helvet}         % sans serif
 \usepackage[T1]{fontenc}    % font encoding
 
-\usepackage{comment}
-\usepackage{lipsum}
+%% special symbols
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
 
 %%%----------------------------------------------------------------
 %%% DOCUMENT INFO
@@ -39,8 +41,19 @@
 
 %%%----------------------------------------------------------------
 %%% INITIALIZE
-\input{setup}               % loads all usepackages and changes layout
-\addbibresource{references.bib}
+\input{setup}                       % loads all usepackages and changes layout
+\addbibresource{references.bib}     % loads bibliography
+\newlength{\distTextWidth}          % effective textwidth
+\newlength{\distColSep}             % separation gap when using multiple columns
+\setlength{\distTextWidth}{\dimexpr\textwidth-\columnsep\relax}
+\setlength{\distColSep}{6pt}
+
+%%%----------------------------------------------------------------
+%%% DEBUGGING
+\usepackage{showkeys}       % DEBUGGING show labels abover references
+\usepackage{comment}        % DEBUGGING comment out code with comment environment
+\usepackage{lipsum}         % DEBUGGING blind text
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}\PackageWarning{TODO:}{#1!}} % DEBUGGING todo note
 
 \begin{document}
 
